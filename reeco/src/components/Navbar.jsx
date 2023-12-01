@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <SubContainer1>
-         <H2>Reeco</H2>
+         <NavH2>Reeco</NavH2>
          <p>Store</p>
          <p>Order</p>
          <p>Analytics</p>
@@ -27,13 +27,13 @@ const NavContainer = styled.div`
     width:99.9%;
     height:40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: green;
     color:white;
 `;
 
 const SubContainer1 = styled.div`
-    width:60%;
+    width:50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -58,6 +58,6 @@ const CartIcon = styled.span`
     color:white;
 `;
 
-const H2 = styled.h1`
+const NavH2 = styled.h1`
     font-style: italic;
 `;
