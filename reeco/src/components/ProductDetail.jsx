@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {PiPrinterThin} from "react-icons/pi"
+import SingleProduct from './SingleProduct';
 
 const ProductDetail = () => {
   return (
@@ -17,23 +18,24 @@ const ProductDetail = () => {
        <ProductDetailDiv>
         <thead>
             <TableRowHead>
-                <TableFirstColumnHead>Name of Product</TableFirstColumnHead>
+                <TableFirstColumnHead>Product</TableFirstColumnHead>
                 <TableColumnHead>Brand</TableColumnHead>
                 <TableColumnHead>Price</TableColumnHead>
                 <TableColumnHead>Quantity</TableColumnHead>
                 <TableColumnHead>Total</TableColumnHead>
-                <TableLastColumnHead>Status of Product</TableLastColumnHead>
+                <TableLastColumnHead>Status</TableLastColumnHead>
             </TableRowHead>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
+         <SingleProduct/>   
         </tbody>
        </ProductDetailDiv>
     </MainContainer>
@@ -44,11 +46,12 @@ export default ProductDetail;
 
 const MainContainer = styled.div`
     width:83%;
-    height:600px;
+    height:auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin:auto;
     margin-top: 50px;
     padding:30px;
+    padding-bottom: 0;
     border-radius: 15px;
 `;
 
@@ -112,18 +115,22 @@ const TableRowHead = styled.tr`
 
 const TableColumnHead = styled.th`
     padding:10px 0;
-    border:1px solid red;
+    /* border:1px solid red; */
+    width:10%;
 `;
 const TableFirstColumnHead = styled.th`
     padding:10px 0;
     column-count: 1;
-    /* column-span: 2; */
-    border:1px solid red;
+    column-span: 1;
+    width:25%;
+    /* border:1px solid red; */
 `;
 
 const TableLastColumnHead = styled.th`
-    padding:10px 0;
+    padding:10px 0 0 50px;
     column-count: 1.5;
     /* column-span: 2; */
-    border:1px solid red;
+    /* border:1px solid red; */
+    width:25%;
+    text-align: left;
 `;

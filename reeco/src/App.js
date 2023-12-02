@@ -4,14 +4,16 @@ import Navbar from './components/Navbar';
 import DetailNav from './components/DetailNav';
 import OrderData from './components/OrderData';
 import ProductDetail from './components/ProductDetail';
+import MissingProduct from './components/MissingProduct';
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
+     {/* <Navbar/>
      <DetailNav/>
      <OrderData/>
-     <ProductDetail/>
+     <ProductDetail/> */}
+     <MissingProduct/>
     </div>
   );
 }
