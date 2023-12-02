@@ -5,15 +5,19 @@ import DetailNav from './components/DetailNav';
 import OrderData from './components/OrderData';
 import ProductDetail from './components/ProductDetail';
 import MissingProduct from './components/MissingProduct';
+import { useState } from 'react';
+import EditProduct from './components/EditProduct';
 
 function App() {
+  
   return (
     <div className="App">
-     {/* <Navbar/>
+     <Navbar/>
      <DetailNav/>
      <OrderData/>
-     <ProductDetail/> */}
-     <MissingProduct/>
+     <ProductDetail/>
+     {/* <MissingProduct/> */}
+     {/* <EditProduct/> */}
     </div>
   );
 }

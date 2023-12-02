@@ -27,15 +27,7 @@ const ProductDetail = () => {
             </TableRowHead>
         </thead>
         <tbody>
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
-         <SingleProduct/>   
+         <SingleProduct/>      
         </tbody>
        </ProductDetailDiv>
     </MainContainer>

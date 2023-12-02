@@ -1,27 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import avacado from "../Images/Avocado.jpg";
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import {useDispatch, useSelector } from "react-redux";
+import { editPopupOpen, getProducts, missingPopupOpen } from '../Redux/action';
+import MissingProduct from './MissingProduct';
+import EditProduct from './EditProduct';
 
 const SingleProduct = () => {
+        const {product,missing,editpage} = useSelector((state)=>{
+        console.log(state.reducer.missing,state.reducer.editpage)
+        return state.reducer;
+    })
+    const dispatch = useDispatch();
+
+    const HandleMiss = () =>{
+         dispatch(missingPopupOpen)
+    }
 
     const HandleEdit = () =>{
-        console.log("ankush")
+        dispatch(editPopupOpen)
     }
+
+    useEffect(()=>{
+        dispatch(getProducts);
+    },[])
   return (
-      <TbodyRow>
+    <>
+            {product.length> 0 && product.map((ele,index)=>(
+      <TbodyRow key={index}>
         <TbodyColumnFirst>
              <Img src={avacado} alt="avacado" />
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, amet?</p>
+             <p>{ele.name}</p>
              </TbodyColumnFirst>
-        <TbodyColumn>Lorem, ipsum dolor.</TbodyColumn>
+        <TbodyColumn>{ele.brand}</TbodyColumn>
         <TbodyColumn>
-            <p>$60.67/6+1LB</p>
-            <OldPrice>$10.34</OldPrice>
+            <p>${ele.updated_price}/6+1LB</p>
+            <OldPrice>${ele.old_price}</OldPrice>
         </TbodyColumn>
-        <TbodyColumn>15*6 = 1LB</TbodyColumn>
-        <TbodyColumn>$8700.4</TbodyColumn>
+        <TbodyColumn>{ele.quantity}*6 = 1LB</TbodyColumn>
+        <TbodyColumn>${+ele.updated_price * +ele.quantity}</TbodyColumn>
         <TbodyColumnLast>
            <div>
                 <SpanStaus>
@@ -29,7 +48,7 @@ const SingleProduct = () => {
                 </SpanStaus>
            </div>
            <StatusButtons>
-            <AiOutlineClose/>
+            <AiOutlineClose onClick={HandleMiss}/>
             <FaCheck/>
             <EditButton onClick={HandleEdit}>
                 Edit
@@ -37,6 +56,11 @@ const SingleProduct = () => {
            </StatusButtons>
         </TbodyColumnLast>
       </TbodyRow>
+      
+    ))}
+    {missing && <MissingProduct/>}
+    {editpage && <EditProduct/>}
+      </>
   )
 }
 
