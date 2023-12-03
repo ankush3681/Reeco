@@ -63,7 +63,7 @@ export default EditProduct;
 
 const Edit = styled.div`
   width:100%;
-  height:100vh;
+  height:1000px;
   background-color: rgba(46, 46, 46, 0.8);
   position:absolute;
   left:0;
