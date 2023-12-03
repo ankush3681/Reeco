@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getProducts = (dispatch) => {
     dispatch({type : "GET_PRODUCT_REQUEST" });
-    axios.get(`http://localhost:3001/product`)
+    axios.get(`https://drab-gray-sea-lion-belt.cyclic.app/product`)
     .then((res)=>{
     //   console.log("ankush",res);
       dispatch({type :"GET_PRODUCT_SUCCESS",payload: res.data });
